@@ -1,4 +1,7 @@
 # Write your code below game_hash
+
+require 'pry'
+
 def game_hash
   {
     home: {
@@ -124,6 +127,52 @@ def game_hash
       ]
     }
   }
+end 
+
+def num_points_scored(player_name)
+game_hash.each do |key,value|
+  value[:players].each do |value1|
+    if value1[:player_name] == player_name
+    return value1[:points] 
+  end 
+  end 
+end
+end 
+
+
+def shoe_size(player_name)
+  game_hash.each do |k,v|
+    v[:players].each do |value2|
+  
+    if value2[:player_name] == player_name
+    return value2[:shoe] 
+    
+  end 
+  end 
+end
+end 
+
+def team_colors(team)
+  game_hash.each do |k1,v1|
+    if v1[:team_name]  == team
+    return v1[:colors]
+  end
+end 
 end
 
-# Write code here
+def team_names
+ann = []
+game_hash.each do |value,d|
+  if value[:team_name]
+    binding.pry
+  value.each_value do |names|
+    ann << names
+    binding.pry
+    
+  end 
+end 
+end 
+end
+
+
+
