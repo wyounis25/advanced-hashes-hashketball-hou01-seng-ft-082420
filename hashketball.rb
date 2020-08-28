@@ -242,7 +242,7 @@ pokemon.each do |k|
 
     k.each do |k1,v1|
         k1[:base_experience] 
-        
+        binding.pry
     
     end 
 end 
